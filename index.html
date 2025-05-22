@@ -1,1 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sofia minha ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Dancing Script', cursive;
+            background: linear-gradient(to bottom, #ffcccc, #ff99cc);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        h1 {
+            font-size: 36px;
+            color: #d63384;
+        }
+        .buttons {
+            position: relative;
+            margin-top: 20px;
+        }
+        button {
+            font-size: 20px;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background 0.3s ease;
+            position: absolute;
+        }
+        .yes-button {
+            background-color: #ff4081;
+            color: white;
+            position: static;
+        }
+        .yes-button:hover {
+            transform: scale(1.1);
+            background-color: #e91e63;
+        }
+        .no-button {
+            background-color: #555;
+            color: white;
+            position: absolute;
+        }
+        .gif_container {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
 
+    <h1>Você vai ser minha esposa, Sofia? 💌</h1>
+    <div class="buttons">
+        <button class="yes-button" onclick="handleYesClick()">Sim</button>
+        <button class="no-button" id="noBtn">Não</button>
+    </div>
+    <div class="gif_container">
+        <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW5lenZyZHI5OXM2eW95b3pmMG40cWVrMDhtNjVuM3A4dGNxa2g2dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/VM1fcpu2bKs1e2Kdbj/giphy.gif" alt="Cute GIF">
+    </div>
+
+    <script>
+        function moverBotao() {
+            let botaoNao = document.getElementById("noBtn");
+            let larguraTela = window.innerWidth - botaoNao.offsetWidth;
+            let alturaTela = window.innerHeight - botaoNao.offsetHeight;
+
+            let novaPosX = Math.random() * larguraTela;
+            let novaPosY = Math.random() * alturaTela;
+
+            botaoNao.style.left = novaPosX + "px";
+            botaoNao.style.top = novaPosY + "px";
+        }
+
+        document.getElementById("noBtn").addEventListener("mouseover", moverBotao);  // Para desktop
+        document.getElementById("noBtn").addEventListener("touchstart", moverBotao);  // Para celular
+
+        function handleYesClick() {
+            alert("sempre soube disto 😍");
+        }
+    </script>
+
+</body>
+</html>
